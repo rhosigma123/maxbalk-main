@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maxbalk | Leading Defense Company | Technology Innovations</title>
+    <meta
+      name="description"
+      content="Maxbalk is a leading defense company specializing in technology innovations. Explore our range of solutions designed to meet tomorrow's challenges."
+    />
+    <meta
+      name="robots"
+      content="max-image-preview:large, max-snippet:-1, max-video-preview:-1 "
+    />
+    <%- include('partials/preconnect') %>
+    <link
+      rel="preload"
+      as="image"
+      href="https://maxbalk.com/images/maxbalk-hero-img.webp"
+    />
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta
+      property="og:title"
+      content=" Maxbalk | Leading Defense Company | Technology Innovations"
+    />
+    <meta
+      property="og:description"
+      content="Maxbalk is a leading defense company specializing in technology innovations. Explore our range of solutions designed to meet tomorrow's challenges."
+    />
+    <meta property="og:url" content="https://maxbalk.com/" />
+    <link rel="canonical" href="https://maxbalk.com/" />
+
+    <!-- Twitter Card meta tags for Twitter sharing -->
+    <meta
+      name="twitter:title"
+      content=" Maxbalk | Leading Defense Company | Technology Innovations"
+    />
+    <meta
+      name="twitter:description"
+      content="Maxbalk is a leading defense company specializing in technology innovations. Explore our range of solutions designed to meet tomorrow's challenges."
+    />
+
+    <%- include('partials/metas'); -%>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <!-- ! Hero Section -->
+    <section class="hero-section p-t-100 p-b-100">
+      <div class="maxbalk-container hero-section__Container">
+        <div class="hero-section__Content">
+          <h1 class="h2 fc-w fw-6">
+            MAXBALK: Empowering
+            <br />
+            Innovation, Securing Tomorrow
+          </h1>
+          <p class="fc-w fw-4 p-18">
+            Where Innovation Meets Security: MAXBALK
+            <br />
+            Your Trusted Partner for Advanced Solutions
+          </p>
+          <a class="btn__white-br" href="#">Explore</a>
+        </div>
+      </div>
+    </section>
+    <!-- ! Hero Section -->
+
+    <!-- !  infinite slide-->
+    <% if (clients.length > 0) { %>
+    <section class="--dark-bg">
+      <div class="logo-scroll-wrapper maxbalk-container p-t-20 p-b-20">
+        <div class="logo-scroll">
+          <% clients.forEach(client => { %>
+            <img
+            width="150"
+            height="100"
+            src="<%= client.logo %>"
+            loading="eager"
+            alt="Logo of <%= client.companyName %>"
+            class="logo"
+          />
+          <% }) %>
+
+        </div>
+      </div>
+    </section>
+    <% } %>
+    <!-- !  infinite slide-->
+
+
+    <!-- ! Aout Maxbalk -->
+    <section class="about-maxbalk p-t-100 p-b-100">
+      <div class="maxbalk-container about-maxbalk__container">
+        <h2 class="h2 fc-a fw-6">About MAXBALK</h2>
+        <video width="900" height="650" autoplay muted playsinline loop>
+          <source src="/images/drone.mp4" />
+        </video>
+        <p class="p-20 fw-4 fc-p">
+          In the realm of defense and security, Maxbalk emerges as a bastion of
+          innovation and reliability. Forged in the crucible of technological
+          advancement and rigorous industry standards, Maxbalk’s ethos is a blend
+          of unwavering dedication and meticulous precision. We are a fortress of
+          safety, safeguarding lives with ourground breaking security solutions.
+        </p>
+        <a href="/about-us" class="btn__dark-br">Learn More</a>
+      </div>
+    </section>
+    <!-- ! Aout Maxbalk -->
+
+    <!-- ! Comprehensive Services -->
+    <section class="p-t-75 p-b-75 conprehensive-services">
+      <div class="maxbalk-container">
+        <div class="conprehensive-services__container">
+          <div class="conprehensive-services__heading">
+            <h2 class="h2 fw-6 fc-w">Comprehensive Services</h2>
+            <a class="btn__white-br" href="/services">View All</a>
+          </div>
+
+          <p class="fc-w p-20 fw-4">
+            At MAXBALK, we offer a diverse range of services designed to meet
+            the evolving needs of businesses across industries. From technology
+            development to manufacturing, tech consulting, AI/ML integration,
+            and packaging solutions, we have the expertise and capabilities to
+            help you succeed.
+          </p>
+
+          <div class="maxbalk-cards-container">
+            <div class="maxbalk-card --white-bg">
+              <img
+                width="350"
+                height="200"
+                loading="lazy"
+                src="/images/technology-development.png"
+                alt=""
+              />
+              <h3 class="h4 fc-p fw-6">Technology Development</h3>
+              <p class="fc-p p-18 fw-4">
+                At Maxbalk, technology development is deeply rooted in stringent
+                R&D protocols, ensuring each innovation surpasses the rigorous
+                standards of defense applications.
+              </p>
+              <a href="/services/technology-development" class="btn__dark-br"
+                >Learn More</a
+              >
+            </div>
+
+            <div class="maxbalk-card --white-bg">
+              <img
+                width="350"
+                height="200"
+                loading="lazy"
+                src="/images/packaging-solutions.png"
+                alt=""
+              />
+              <h3 class="h4 fc-p fw-6">Packaging Solutions</h3>
+              <p class="fc-p p-18 fw-4">
+                Maxbalk's packaging solutions are meticulously designed to comply with military-grade standards, guaranteeing the operational integrity of equipment under any transport conditions.
+              </p>
+              <a href="/services/packaging-solutions" class="btn__dark-br"
+                >Learn More</a
+              >
+            </div>
+
+            <div class="maxbalk-card --white-bg">
+              <img
+                width="350"
+                height="200"
+                loading="lazy"
+                src="/images/manufacturing.png"
+                alt=""
+              />
+              <h3 class="h4 fc-p fw-6">Manufacturing</h3>
+              <p class="fc-p p-18 fw-4">
+                Maxbalk's manufacturing excellence lies in our unwavering commitment to precision and stringent quality control, ensuring every product adheres to international defense manufacturing standards.
+              </p>
+              <a href="/services/manufacturing" class="btn__dark-br"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ! Comprehensive Services -->
+
+    <!-- ! Our Products -->
+    <section class="p-t-75 p-b-75 our-products">
+      <div class="maxbalk-container our-products__container">
+        <div class="our-products__heading">
+          <h2 class="h2 fw-6 fc-a">Our Products</h2>
+          <a class="btn__dark-br" href="/products">View All</a>
+        </div>
+
+        <p class="fc-p p-20 fw-4">
+          MAXBALK offers a comprehensive selection of products tailored to
+          enhance safety, convenience, and efficiency. Browse our product
+          catalog to discover the perfect solution for your requirements.
+        </p>
+        <div class="maxbalk-cards-container">
+          <a href="/products/armoring-plates" class="maxbalk-card --dark-bg">
+            <h3 class="h4 fc-w fw-6">Armoring Plates</h3>
+            <img
+              class="m-t-20"
+              width="350"
+              height="200"
+              loading="lazy"
+              src="/images/armoring-plates.png"
+              alt=""
+            />
+            <p class="fc-w p-18 fw-4">
+              Maxbalk's armoring plates are developed from in-depth material science research and are designed to meet various National Institute of Justice (NIJ) ballistic resistance levels.
+            </p>
+          </a>
+
+          <a
+            href="/products/backpacks-for-drones"
+            class="maxbalk-card --dark-bg"
+          >
+            <h3 class="h4 fc-w fw-6">Backpacks for Drones</h3>
+            <img
+              class="m-t-20"
+              width="350"
+              height="200"
+              loading="lazy"
+              src="/images/backpack-for-drone.png"
+              alt=""
+            />
+            <p class="fc-w p-18 fw-4">
+              Maxbalk’s drone backpacks are engineered for both lightweight design and robust protection, offering versatile accommodation for various UAV models while adhering to defense transport regulations.
+            </p>
+          </a>
+
+          <a
+            href="/products/portable-armored-cabins"
+            class="maxbalk-card --dark-bg"
+          >
+            <h3 class="h4 fc-w fw-6">Portable Armored Cabins</h3>
+            <img
+              class="m-t-20"
+              width="350"
+              height="200"
+              loading="lazy"
+              src="/images/portable-armored-cabin.png"
+              alt=""
+            />
+            <p class="fc-w p-18 fw-4">
+              Maxbalk's portable armored cabins are ingeniously designed for modularity and swift deployment, ensuring they meet stringent safety standards for field operations.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ! Our Products -->
+
+    <!-- ! Industry Solutions -->
+    <section class="industry-solutions --dark-bg p-t-100">
+      <div class="industry-solutions__container">
+        <div class="insdustry-solutions__heading maxbalk-container m-b-50">
+          <h2 class="h2 fc-w fw-6">Industry Solutions</h2>
+          <a class="btn__white-br" href="/industry">View All</a>
+        </div>
+        <p class="p-18 fc-w fw-4 p-b-50 maxbalk-container">
+          We specialize in delivering customized solutions to meet the unique
+          challenges of your sector. Explore our comprehensive range of services
+          and discover how MAXBALK can help your business thrive in today's
+          competitive landscape.
+        </p>
+        <div class="industry-solutions__lr-container">
+          <span class="red"></span>
+          <div class="maxbalk-container industry-solutions__grid">
+            <div class="industry-solutions__left-div p-t-100 p-b-100">
+              <h2 class="h3 fw-6 fc-w">Defense</h2>
+              <p class="p-18 fc-w fw-4">
+                In the defensesector, Maxbalk is dedicated to becoming a trusted
+                name, aspiring to set newbenchmarks rather than just meet
+                existing ones.
+              </p>
+              <a href="/industry" class="btn__white-br">Learn More</a>
+            </div>
+            <div class="industry-solutions__right-div p-t-100 p-b-100">
+              <h2 class="h3 fw-6 fc-w">Industrial Automation</h2>
+              <p class="p-18 fc-w fw-4">
+                In the realm of industrial automation, Maxbalk's defense
+                solutions are meticulously engineered to align with
+                international safety and efficiency standards.
+              </p>
+              <a href="/industry" class="btn__white-br">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ! Industry Solutions -->
+    
+    <% if (news.length > 0) { %>
+    <!-- ! Maxbalk's News and Events -->
+    <section class="p-t-75 p-b-75 our-products --white-bg">
+      <div class="maxbalk-container our-products__container">
+        <div class="our-products__heading">
+          <h2 class="h2 fw-6 fc-a">Maxbalk's News and Events</h2>
+          <a class="btn__dark-br" href="/news-and-events">View All</a>
+        </div>
+
+        <p class="fc-p p-20 fw-4">
+          Welcome to the Maxbalk News and Events page, your source for the
+          latest updates on our company's activities, industry news, and
+          upcoming events. Explore this page to stay informed about our latest
+          innovations, partnerships, and initiatives.
+        </p>
+
+        <div class="maxbalk-cards-container">
+          <% news.forEach(n => { %>
+            <div class="maxbalk-card --dark-bg">
+              <img
+                width="350"
+                height="200"
+                loading="lazy"
+                src="<%= n.image %>"
+                alt="<%= n.title %>"
+              />
+              <h3 class="h4 fc-w fw-6">
+                <%= n.title %>
+              </h3>
+              <p class="fc-w p-18 fw-4">
+                <%= n.description %>
+              </p>
+              <span class="fc-w fw-6 p-18"
+                ><strong>Event - </strong><%= n.updatedAt %></span
+              >
+              <a href="/news-and-events/<%= n.slug %>" class="btn__white-br">Read More</a>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+    <!-- ! Maxbalk's News and Events -->
+    <% } %>
+
+    <%- include('partials/call-to-action'); -%>
+    <!--  -->
+    <%- include('partials/footer');-%>
+  </body>
+</html>

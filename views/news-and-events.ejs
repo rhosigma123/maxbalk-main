@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maxbalk News & Events: Stay Updated on Defense Innovations</title>
+    <meta name="description" content="Stay informed with the latest news and events from Maxbalk. Explore our advancements in defense technology and discover upcoming industry events." />
+    <meta
+      name="robots"
+      content="max-image-preview:large, max-snippet:-1, max-video-preview:-1 "
+    />
+    <%- include('partials/preconnect') %>
+    <link rel="preload" as="image" href="https://maxbalk.com/images/product-banner.webp">
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="Maxbalk News & Events: Stay Updated on Defense Innovations" />
+    <meta property="og:description" content="Stay informed with the latest news and events from Maxbalk. Explore our advancements in defense technology and discover upcoming industry events." />
+    <meta property="og:url" content="https://maxbalk.com/news-and-events" />
+    <link rel="canonical" href="https://maxbalk.com/news-and-events" />
+
+    <!-- Twitter Card meta tags for Twitter sharing -->
+    <meta name="twitter:title" content="Maxbalk News & Events: Stay Updated on Defense Innovations" />
+    <meta name="twitter:description" content="Stay informed with the latest news and events from Maxbalk. Explore our advancements in defense technology and discover upcoming industry events." />
+
+    <%- include('partials/metas'); -%>
+  </head>
+  <body>
+    <%- include('partials/navbar'); -%>
+    <!-- ! Banner -->
+    <section class="news-and-events-banner banner p-t-100 p-b-100">
+      <div class="maxbalk-container banner__container">
+        <h1 class="h2 fc-w fw-6">Stay Informed with Maxbalk - Discover the Latest in Defense Innovation and Events</h1>
+      </div>
+    </section>
+    <!-- ! Banner -->
+
+    <% if (news.length > 0) { %>
+    <!-- ! Maxbalk's News and Events -->
+    <section class="p-t-75 p-b-75 our-products --white-bg">
+      <div class="maxbalk-container our-products__container">
+        <p class="fc-p p-20 fw-4 p-b-50">
+          At Maxbalk, we understand that every industry comes with its own
+          unique set of challenges and requirements. That's why we offer
+          industry-specific solutions tailored to meet the needs of businesses
+          across a wide range of sectors. From defense and aerospace to
+          manufacturing, healthcare, and beyond, Maxbalk is your trusted partner
+          for driving success in your industry.
+        </p>
+
+        <div class="maxbalk-cards-container">
+          
+          <div class="maxbalk-card --dark-bg">
+            <img
+              width="350"
+              height="200"
+              loading="lazy"
+              src="/images/portable-armored-cabins.webp"
+              alt=""
+            />
+            <h3 class="h4 fc-w fw-6">
+              Maxbalk Partners with Leading Aerospace Manufacturer
+            </h3>
+            <p class="fc-w p-18 fw-4">
+              New partnership with a leading aerospace manufacturer to enhance
+              flight operations through innovative technology solutions.
+            </p>
+            <span class="fc-w fw-6 p-18"
+              ><strong>Event - </strong>02-02-2024</span
+            >
+            <a href="" class="btn__white-br">Read More</a>
+          </div>
+        </div>
+        <div class="pagination m-t-50">
+          <ul></ul>
+        </div>
+      </div>
+    </section>
+    <!-- ! Maxbalk's News and Events -->
+    <% } %>
+
+
+    <%- include('partials/call-to-action'); -%> <%- include('partials/footer');
+    -%>
+  </body>
+</html>

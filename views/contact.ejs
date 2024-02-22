@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Maxbalk: Get in Touch for Advanced Defense Solutions</title>
+    <meta name="description" content="Reach out to Maxbalk to discuss your defense requirements. Our team is ready to provide expert consultation and support for all your defense technology needs." />
+    <meta name="robots" content="noindex, follow" />
+    <%- include('partials/preconnect') %>
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="Contact Maxbalk: Get in Touch for Advanced Defense Solutions" />
+    <meta property="og:description" content="Reach out to Maxbalk to discuss your defense requirements. Our team is ready to provide expert consultation and support for all your defense technology needs." />
+    <meta property="og:url" content="https://maxbalk.com/contact" />
+    <link rel="canonical" href="https://maxbalk.com/contact" />
+
+    <!-- Twitter Card meta tags for Twitter sharing -->
+    <meta name="twitter:title" content="Contact Maxbalk: Get in Touch for Advanced Defense Solutions" />
+    <meta name="twitter:description" content="Reach out to Maxbalk to discuss your defense requirements. Our team is ready to provide expert consultation and support for all your defense technology needs." />
+
+    <%- include('partials/metas'); -%>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcIvFYpAAAAAP4z9iSZRtJG9NXIBqXCHReZuF6_"></script>
+  </head>
+  <body>
+    <%- include('partials/navbar'); -%>
+
+    <!-- ! Contact Form -->
+
+    <section class="maxbalk-container contact-page m-t-20 m-b-100">
+      <h2 class="h2 fc-a fw-6">Contact Us</h2>
+      <p class="fc-p fw-4 p-18">
+        Our friendly team would love to hear from you
+      </p>
+      <form
+        class="get-quote__contact-form"
+        action="/contact-us"
+        method="post"
+        id="contact-form"
+        onsubmit="handleFormSubmit(event, 'contact-form')"
+      >
+        <label class="name-label" for="name">Full Name</label>
+        <input
+          class="get-quote__name"
+          id="name"
+          name="name"
+          required
+          autocomplete="off"
+          maxlength="50"
+          oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')"
+          onblur="validateName()"
+          type="text"
+          placeholder="Full Name Here"
+        />
+        <span id="nameError" class="error-message"></span>
+
+        <label class="email-label" for="phone">Email</label>
+        <input
+          class="get-quote__email"
+          name="email"
+          type="email"
+          id="email"
+          placeholder="yourmail@email.com"
+          required
+          autocomplete="off"
+          onblur="validateEmail()"
+        />
+        <span id="emailError" class="error-message"></span>
+
+        <label class="phone-label" for="email">Phone</label>
+        <input
+          class="get-quote__phone"
+          name="phone"
+          type="tel"
+          id="phone"
+          placeholder="Phone"
+          required
+          autocomplete="off"
+          name="phone"
+          maxlength="15"
+          oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+          onblur="validatePhone()"
+        />
+        <span id="phoneError" class="error-message"></span>
+
+        <label class="message-label" for="message">Message</label>
+        <textarea
+          class="get-quote__message"
+          name="message"
+          id="textarea"
+          placeholder="Your message here"
+          required
+          autocomplete="off"
+        ></textarea>
+        <button type="submit" class="submit-btn">Submit</button>
+        <p class="form-message fw-6"></p>
+      </form>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d17927.90173090396!2d73.02811378628529!3d19.156857385827013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1708331838810!5m2!1sen!2sin"
+        width="500"
+        height="850"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+    <!-- ! Contact Form -->
+
+    <!-- ! Contac Options -->
+    <section class="contact-details p-t-75 p-b-75 --dark-bg">
+      <div class="maxbalk-container contact-details__container">
+        <a class="fc-w fw-5 p-18" href="mailto:sales@maxbalk.in"
+          ><img src="/images/email-dark.svg" alt="email" />sales@maxbalk.in</a
+        >
+        <a class="fc-w fw-5 p-18" href="tel:+91-98765 43210"
+          ><img src="/images/phone-dark.svg" alt="phone" />+91-98765 43210</a
+        >
+        <a
+          class="fc-w fw-5 p-18"
+          target="_blank"
+          href="https://maps.app.goo.gl/wKV4mppePNVWkQco7"
+          ><img src="/images/location.svg" alt="location" />Address: Plot No.17,
+          Survey No 69, Hissa No 2, Sagar Market, Behind Mukesh Hotel, Shilphata
+          Mumbra Thane 400612</a
+        >
+      </div>
+    </section>
+    <!-- ! Contac Options -->
+
+    <%- include('partials/footer'); -%>
+  </body>
+</html>

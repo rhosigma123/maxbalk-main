@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found</title>
+    <meta name="description" content="" />
+    <meta name="robots" content="noindex, follow" />
+    <%- include('partials/preconnect') %>
+    <link rel="preload" as="image" href="https://maxbalk.com/images/error-bg.webp">
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://maxbalk.com/404" />
+    <link rel="canonical" href="https://maxbalk.com/404" />
+
+    <!-- Twitter Card meta tags for Twitter sharing -->
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+
+    <%- include('partials/metas'); -%>
+  </head>
+  <body>
+    <%- include('partials/navbar'); -%>
+
+    <!-- ! 404 section -->
+    <section class="page-not-found">
+      <h1 class="fc-w fw-6">404</h1>
+      <h2 class="fc-w fw-6 h2">Page Not Found</h2>
+    </section>
+    <!-- ! 404 section -->
+
+    <!-- ! Call to action -->
+    <section
+      class="call-to-action p-t-50 p-b-50"
+      style="background: var(--white)"
+    >
+      <div class="maxbalk-container call-to-action__container">
+        <h2 class="h2 fc-p fw-6">Join Us: Experience the MAXBALK Difference</h2>
+        <p class="fc-p p-20 fw-4">
+          Whether you're looking to explore new technologies, optimize your
+          processes, or solve complex challenges, MAXBALK is here to help.
+          Partner with us today and experience the MAXBALK difference for
+          yourself.
+        </p>
+        <a class="btn__dark-br" href="/contact">Contact</a>
+      </div>
+    </section>
+    <!-- ! Call to action -->
+
+    <%- include('partials/footer'); -%>
+  </body>
+</html>

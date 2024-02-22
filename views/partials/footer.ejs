@@ -1,0 +1,115 @@
+<footer class="p-t-50 maxbalk-footer">
+  <div class="maxbalk-footer__content maxbalk-container p-b-50">
+    <h1 class="fc-w h2">Empowering Innovation, Securing Tomorrow</h1>
+    <p class="p-18 maxbalk-footer__address">
+      <strong> Address: </strong>
+      Plot No.17, Survey No 69, Hissa No 2, Sagar Market, Behind Mukesh Hotel,
+      Shilphata Mumbra Thane 400612
+    </p>
+    <div class="maxbalk-footer__contact">
+      <a href="mailto:sales@maxbalk.in"
+        ><img
+          loading="lazy"
+          width="24"
+          height="24"
+          src="/images/email.svg"
+          alt="email"
+        />sales@maxbalk.in</a
+      >
+      <a href="tel:+91-98765 43210"
+        ><img
+          loading="lazy"
+          width="24"
+          height="24"
+          src="/images/phone.svg"
+          alt="phone"
+        />+91-86555 87403</a
+      >
+    </div>
+    <div class="maxbalk-footer__navlinks">
+      <span>Quick Links:</span>
+      <a href="#">Certifications</a>
+      <a href="#">Career</a>
+      <a href="#">Clients</a>
+      <a href="#">Testimonials</a>
+      <a href="#">FAQ</a>
+      <a href="/terms-of-use">Terms Of Use</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </div>
+    <div class="maxbalk-footer__socials">
+      <a href="https://www.facebook.com/profile.php?id=61556234866623" target="_blank"
+        ><img
+          loading="lazy"
+          width="24"
+          height="24"
+          src="/images/facebook-b.svg"
+          alt="facebook"
+        />
+      </a>
+
+      <a href="https://www.linkedin.com/company/maxbalk-systems" target="_blank"
+        ><img
+          loading="lazy"
+          width="24"
+          height="24"
+          src="/images/linkedin-b.svg"
+          alt="linkedin"
+      /></a>
+
+      <a href="" target="_blank"
+        ><img
+          loading="lazy"
+          width="24"
+          height="24"
+          src="/images/twitter-b.svg"
+          alt="twitter"
+      /></a>
+
+      <a href="" target="_blank"
+        ><img
+          loading="lazy"
+          width="24"
+          height="24"
+          src="/images/instagram-b.svg"
+          alt="instagram"
+      /></a>
+    </div>
+  </div>
+  <div class="maxbalk-footer__bottom">
+    <div class="maxbalk-container maxbalk-footer__container">
+      <p class="fc-s fw-4 p-18">
+        &copy; 2020 - <span id="currentYearInline"></span> Rhosigma - All Rights
+        Reserved
+        <script>
+          document.getElementById("currentYearInline").textContent =
+            new Date().getFullYear();
+        </script>
+      </p>
+      <p class="fc-s fw-4 p-18">
+        Designed & Maintained by
+        <a
+          class="fc-s fw-7"
+          target="_blank"
+          title="Your One Stop IT Solutions Partner"
+          href="https://sovorun.com/"
+          >Sovorun</a
+        >
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  //  !active link
+  var currentPageURL = window.location.pathname;
+  var navLinks = document.querySelectorAll("#navbar  a");
+  navLinks.forEach(function (link) {
+    var linkURL = link.getAttribute("href");
+    if (linkURL === currentPageURL) {
+      link.classList.add("active-navlink");
+    }
+  });
+  //  !active link
+</script>
+
+<script src="/javascript/maxbalk.js"></script>
