@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAXBALK Clients</title>
+    <meta
+      name="description"
+      content="Trusted By The Leading Giants | Meet Maxbalk Clients"
+    />
+    <meta
+      name="robots"
+      content="max-image-preview:large, max-snippet:-1, max-video-preview:-1 "
+    />
+    <%- include('partials/preconnect') %>
+    <link
+      rel="preload"
+      as="image"
+      href="https://maxbalk.com/images/Comprehensive-Services.webp"
+    />
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="MAXBALK Clients " />
+    <meta
+      property="og:description"
+      content="Trusted By The Leading Giants | Meet Maxbalk Clients"
+    />
+    <meta property="og:url" content="https://maxbalk.com/clients" />
+    <link rel="canonical" href="https://maxbalk.com/clients" />
+
+    <!-- Twitter Card meta tags for Twitter sharing -->
+    <meta name="twitter:title" content="MAXBALK Clients " />
+    <meta
+      name="twitter:description"
+      content="Trusted By The Leading Giants | Meet Maxbalk Clients"
+    />
+
+    <%- include('partials/metas'); -%>
+  </head>
+  <body>
+    <%- include('partials/navbar'); -%>
+
+    <!-- ! Banner Section -->
+    <section class="banner service-banner p-t-100 p-b-100">
+      <div class="maxbalk-container banner__container">
+        <h1 class="h2 fc-w fw-6">Maxbalk Clients</h1>
+      </div>
+    </section>
+    <!-- ! Banner Section -->
+
+    <!-- ! Clients -->
+    <% if (clients.length > 0) { %>
+    <section class="p-t-100 p-b-100 clients --white-bg">
+      <div class="maxbalk-container">
+        <h2 class="h2 fc-a fw-6">Clients</h2>
+        <div class="clients__container m-t-50">
+          <% clients.forEach(client => { %>
+          <div class="clients__card">
+            <img
+              width="200"
+              height="100"
+              loading="lazy"
+              src="<%= client.logo %>"
+              alt="Logo of <%= client.companyName %>"
+            />
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+    <% } %>
+    <!-- ! Clients -->
+
+    <%- include('partials/call-to-action'); -%> <%- include('partials/footer');
+    -%>
+  </body>
+</html>

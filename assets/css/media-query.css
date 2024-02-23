@@ -138,26 +138,46 @@
   .industry-page {
     gap: 50px;
   }
+
   .industry-page__grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .industry-page__left-div {
+  .industry-page__left-div:nth-child(odd) {
     grid-row: 2/3;
-    gap: 10px;
+    gap: 20px;
+    background: var(--accent);
+    padding: 20px;
+    border-radius: 20px;
   }
+
+  .industry-page__left-div:nth-child(even) {
+    grid-row: 2/3;
+    gap: 20px;
+    background: var(--primary);
+    padding: 20px;
+    border-radius: 20px;
+  }
+
   .industry-page__right-div {
     height: 200px;
   }
+
   .industry-red,
   .dark {
-    bottom: 0;
-    right: 0;
-    top: unset;
-    width: 100%;
-    height: 63%;
-    left: 0;
-    border-radius: 20px;
+    display: none;
+  }
+
+  .clients__container {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 15px;
+  }
+  .clients__card {
+    height: 120px;
+  }
+  .clients__card img {
+    padding: 0;
   }
 }
 
@@ -295,25 +315,42 @@
   }
   .industry-page__grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .industry-page__left-div {
+  .industry-page__left-div:nth-child(odd) {
     grid-row: 2/3;
-    gap: 10px;
+    gap: 20px;
+    background: var(--accent);
+    padding: 20px;
+    border-radius: 20px;
   }
+
+  .industry-page__left-div:nth-child(even) {
+    grid-row: 2/3;
+    gap: 20px;
+    background: var(--primary);
+    padding: 20px;
+    border-radius: 20px;
+  }
+
   .industry-page__right-div {
     height: 200px;
     z-index: 1;
   }
   .industry-red,
   .dark {
-    bottom: 0;
-    right: 0;
-    top: unset;
-    width: 100%;
-    height: 63%;
-    left: 0;
-    border-radius: 20px;
+    display: none;
+  }
+  .clients__container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  .clients__card {
+    height: 140px;
+  }
+  .clients__card img {
+    padding: 0;
   }
 }
 
@@ -435,6 +472,10 @@
   }
   .hero-section {
     height: 450px;
+  }
+  .section .cards .card {
+    grid-template-columns: 1fr;
+    padding: 20px;
   }
 }
 

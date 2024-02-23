@@ -178,7 +178,14 @@ router.get("/contact", async (req, res) => {
 });
 
 router.get("/clients", async (req, res) => {
-  res.render("clients");
+  try {
+    const clients = await Client.find()
+
+    res.render("clients", { clients });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 router.get("/testimonial", async (req, res) => {
