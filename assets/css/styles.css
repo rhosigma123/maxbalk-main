@@ -36,7 +36,6 @@
 .h2 {
   font-size: var(--h2);
   line-height: 120%;
-
 }
 
 .h3 {
@@ -1801,6 +1800,21 @@ textarea {
     lightgray 0px -242.499px / 100.052% 249.511% no-repeat;
 }
 
+.Electronic-warfare-systems-manufacturing {
+  background: linear-gradient(
+      0deg,
+      rgba(51, 51, 51, 0.5) 0%,
+      rgba(51, 51, 51, 0.5) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(227, 33, 36, 0.8) 0%,
+      rgba(227, 33, 36, 0) 67.79%
+    ),
+    url(/images/Electronic-warfare-systems-manufacturing.jpg),
+    lightgray 0px -242.499px / 100.052% 249.511% no-repeat;
+}
+
 .product-detail-banner {
   background: linear-gradient(
       0deg,
@@ -2161,3 +2175,100 @@ figure.snip1192 .author h5 span {
 }
 
 /* ! Testimonial */
+
+/* ! FAQ's */
+.accordion .accordion-item {
+  border-bottom: 1px solid var(--white);
+}
+
+.accordion .accordion-item button[aria-expanded="true"] {
+  border-bottom: 1px solid var(--accent);
+}
+
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: var(--primary);
+  font-size: var(--p-20);
+  font-weight: 500;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+
+.accordion button[aria-expanded="true"] {
+  color: var(--accent);
+}
+.accordion button[aria-expanded="true"] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded="true"] + .accordion-content {
+  opacity: 1;
+  height: auto;
+  transition: opacity 200ms linear, height 200ms ease-in-out;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, height 200ms ease-in-out;
+}
+.accordion .accordion-content p {
+  font-size: var(--p-18);
+  font-weight: 400;
+  margin: 2em 0;
+}
+
+/* ! FAQ's */

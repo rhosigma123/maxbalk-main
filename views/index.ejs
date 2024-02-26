@@ -60,7 +60,7 @@
             <br />
             Your Trusted Partner for Advanced Solutions
           </p>
-          <a class="btn__white-br" href="#">Explore</a>
+          <a class="btn__white-br" href="/products">Explore</a>
         </div>
       </div>
     </section>
@@ -72,7 +72,7 @@
       <div class="logo-scroll-wrapper maxbalk-container p-t-20 p-b-20">
         <div class="logo-scroll">
           <% clients.forEach(client => { %>
-            <img
+          <img
             width="150"
             height="100"
             src="<%= client.logo %>"
@@ -81,13 +81,11 @@
             class="logo"
           />
           <% }) %>
-
         </div>
       </div>
     </section>
     <% } %>
     <!-- !  infinite slide-->
-
 
     <!-- ! Aout Maxbalk -->
     <section class="about-maxbalk p-t-100 p-b-100">
@@ -99,9 +97,10 @@
         <p class="p-20 fw-4 fc-p">
           In the realm of defense and security, Maxbalk emerges as a bastion of
           innovation and reliability. Forged in the crucible of technological
-          advancement and rigorous industry standards, Maxbalk’s ethos is a blend
-          of unwavering dedication and meticulous precision. We are a fortress of
-          safety, safeguarding lives with ourground breaking security solutions.
+          advancement and rigorous industry standards, Maxbalk’s ethos is a
+          blend of unwavering dedication and meticulous precision. We are a
+          fortress of safety, safeguarding lives with ourground breaking
+          security solutions.
         </p>
         <a href="/about-us" class="btn__dark-br">Learn More</a>
       </div>
@@ -155,7 +154,10 @@
               />
               <h3 class="h4 fc-p fw-6">Packaging Solutions</h3>
               <p class="fc-p p-18 fw-4">
-                Maxbalk's packaging solutions are meticulously designed to comply with military-grade standards, guaranteeing the operational integrity of equipment under any transport conditions.
+                Maxbalk's packaging solutions are meticulously designed to
+                comply with military-grade standards, guaranteeing the
+                operational integrity of equipment under any transport
+                conditions.
               </p>
               <a href="/services/packaging-solutions" class="btn__dark-br"
                 >Learn More</a
@@ -172,7 +174,10 @@
               />
               <h3 class="h4 fc-p fw-6">Manufacturing</h3>
               <p class="fc-p p-18 fw-4">
-                Maxbalk's manufacturing excellence lies in our unwavering commitment to precision and stringent quality control, ensuring every product adheres to international defense manufacturing standards.
+                Maxbalk's manufacturing excellence lies in our unwavering
+                commitment to precision and stringent quality control, ensuring
+                every product adheres to international defense manufacturing
+                standards.
               </p>
               <a href="/services/manufacturing" class="btn__dark-br"
                 >Learn More</a
@@ -209,7 +214,9 @@
               alt=""
             />
             <p class="fc-w p-18 fw-4">
-              Maxbalk's armoring plates are developed from in-depth material science research and are designed to meet various National Institute of Justice (NIJ) ballistic resistance levels.
+              Maxbalk's armoring plates are developed from in-depth material
+              science research and are designed to meet various National
+              Institute of Justice (NIJ) ballistic resistance levels.
             </p>
           </a>
 
@@ -227,7 +234,10 @@
               alt=""
             />
             <p class="fc-w p-18 fw-4">
-              Maxbalk’s drone backpacks are engineered for both lightweight design and robust protection, offering versatile accommodation for various UAV models while adhering to defense transport regulations.
+              Maxbalk’s drone backpacks are engineered for both lightweight
+              design and robust protection, offering versatile accommodation for
+              various UAV models while adhering to defense transport
+              regulations.
             </p>
           </a>
 
@@ -245,7 +255,9 @@
               alt=""
             />
             <p class="fc-w p-18 fw-4">
-              Maxbalk's portable armored cabins are ingeniously designed for modularity and swift deployment, ensuring they meet stringent safety standards for field operations.
+              Maxbalk's portable armored cabins are ingeniously designed for
+              modularity and swift deployment, ensuring they meet stringent
+              safety standards for field operations.
             </p>
           </a>
         </div>
@@ -292,7 +304,7 @@
       </div>
     </section>
     <!-- ! Industry Solutions -->
-    
+
     <% if (news.length > 0) { %>
     <!-- ! Maxbalk's News and Events -->
     <section class="p-t-75 p-b-75 our-products --white-bg">
@@ -311,25 +323,23 @@
 
         <div class="maxbalk-cards-container">
           <% news.forEach(n => { %>
-            <div class="maxbalk-card --dark-bg">
-              <img
-                width="350"
-                height="200"
-                loading="lazy"
-                src="<%= n.image %>"
-                alt="<%= n.title %>"
-              />
-              <h3 class="h4 fc-w fw-6">
-                <%= n.title %>
-              </h3>
-              <p class="fc-w p-18 fw-4">
-                <%= n.description %>
-              </p>
-              <span class="fc-w fw-6 p-18"
-                ><strong>Event - </strong><%= n.updatedAt %></span
-              >
-              <a href="/news-and-events/<%= n.slug %>" class="btn__white-br">Read More</a>
-            </div>
+          <div class="maxbalk-card --dark-bg">
+            <img
+              width="350"
+              height="200"
+              loading="lazy"
+              src="<%= n.image %>"
+              alt="<%= n.title %>"
+            />
+            <h3 class="h4 fc-w fw-6"><%= n.title %></h3>
+            <p class="fc-w p-18 fw-4"><%= n.description %></p>
+            <span class="fc-w fw-6 p-18"
+              ><strong>Event - </strong><%= n.updatedAt %></span
+            >
+            <a href="/news-and-events/<%= n.slug %>" class="btn__white-br"
+              >Read More</a
+            >
+          </div>
           <% }) %>
         </div>
       </div>
@@ -337,8 +347,24 @@
     <!-- ! Maxbalk's News and Events -->
     <% } %>
 
-    <%- include('partials/call-to-action'); -%>
-    <!--  -->
+    <!-- ! Call to action -->
+    <section
+      class="call-to-action p-t-50 p-b-50"
+      style="background: var(--white)"
+    >
+      <div class="maxbalk-container call-to-action__container">
+        <h2 class="h2 fc-p fw-6">Join Us: Experience the MAXBALK Difference</h2>
+        <p class="fc-p p-20 fw-4">
+          Whether you're looking to explore new technologies, optimize your
+          processes, or solve complex challenges, MAXBALK is here to help.
+          Partner with us today and experience the MAXBALK difference for
+          yourself.
+        </p>
+        <a class="btn__dark-br" href="/contact">Contact</a>
+      </div>
+    </section>
+    <!-- ! Call to action -->
+    
     <%- include('partials/footer');-%>
   </body>
 </html>
