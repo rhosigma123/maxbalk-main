@@ -663,13 +663,13 @@ textarea {
 #navbar li a {
   color: var(--primary);
   font-weight: 500;
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-size: var(--p-20);
   border-radius: 50px;
 }
 
 #navbar li a:hover {
-  padding: 10px 20px;
+  padding: 10px 15px;
   color: var(--white);
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -679,7 +679,7 @@ textarea {
                   Mobile Menu Menu Icon
 ======================================================*/
 @media (max-width: 991px) {
-  #navbar li {
+  #navbar li:not(:nth-child(4)) {
     display: none;
   }
   .menuIcon {
@@ -906,20 +906,21 @@ textarea {
 
 .overlay-menu li a:hover {
   color: var(--white);
-  padding: 10px 20px;
+  padding: 10px 15px;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
-#navbar ul li a:hover {
+#navbar ul li:not(:nth-child(4)) a:hover {
   background: var(--accent);
-  padding: 10px 20px;
+  color: var(--white);
+  padding: 10px 15px;
   border-radius: 50px;
 }
 
-#navbar .active-navlink:not(a:nth-child(4)) {
+#menu .active-navlink:not(:nth-child(4) a) {
   background: var(--accent);
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 50px;
   color: var(--white);
 }
@@ -936,7 +937,6 @@ textarea {
     url(/images/maxbalk-hero-img.webp),
     lightgray 0px -396.519px / 107.969% 188.478%;
   background-repeat: no-repeat;
-  /* height: calc(100vh - 200px); */
   height: 700px;
   background-size: cover;
   background-position: center;
@@ -972,6 +972,7 @@ textarea {
     url(/images/maxbalk-footer-img.webp),
     lightgray 0px -215.864px / 100% 184.296% no-repeat;
   background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
