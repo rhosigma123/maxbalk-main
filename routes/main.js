@@ -297,7 +297,7 @@ router.post("/contact-us", async (req, res) => {
           .send(
             "Your Captcha Verification is failed. Please, call us on +91 79776 46886"
           );
-      } else if (body.score < 0.6) {
+      } else if (body.score < 0.7) {
         res
           .status(400)
           .send(
@@ -370,7 +370,7 @@ router.post("/career-form", imageUpload, async (req, res) => {
           .send(
             "Your Captcha Verification is failed. Please, call us on +91 79776 46886"
           );
-      } else if (body.score < 0.6) {
+      } else if (body.score < 0.7) {
         res
           .status(400)
           .send(
