@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>newsAndEventsDetail</title>
-    <meta name="description" content="" />
+    <title><%= news.title %> - newsAndEventsDetail</title>
+    <meta name="description" content="<%= news.description %>" />
     <meta
       name="robots"
       content="max-image-preview:large, max-snippet:-1, max-video-preview:-1 "
@@ -49,66 +49,21 @@
     <!-- ! News and  Events Section -->
     <section class="maxbalk-container news-event m-t-100 m-b-100">
       <div class="news-event__detail">
-        <h1>Crafted for Durability and Protection</h1>
+        <h1><%= news.title %></h1>
         <p class="p-20 fc-p fw-4 m-b-20">
-          Maxbalk is proud to announce the launch of our latest innovation: the
-          next-generation Drone Backpack. Representing a significant leap
-          forward in drone transportation technology, this backpack is
-          engineered to meet the diverse needs of drone enthusiasts and
-          professionals alike, setting new standards in convenience, durability,
-          and security.
+          <%= news.description %>
         </p>
         <img
-          src="/images/product-banner.webp"
+          src="<%= news.image %>"
           width="950"
           height="480"
           loading="lazy"
-          alt=""
+          alt="product-banner"
         />
         <p class="p-20 fc-p fw-4 m-b-20">
-          Maxbalk is proud to announce the launch of our latest innovation: the
-          next-generation Drone Backpack. Representing a significant leap
-          forward in drone transportation technology, this backpack is
-          engineered to meet the diverse needs of drone enthusiasts and
-          professionals alike, setting new standards in convenience, durability,
-          and security.
+          <%- news.content %>
         </p>
-        <h2>Crafted for Durability and Protection</h3>
-        <p class="p-20 fc-p fw-4 m-b-20">
-          Maxbalk is proud to announce the launch of our latest innovation: the
-          next-generation Drone Backpack. Representing a significant leap
-          forward in drone transportation technology, this backpack is
-          engineered to meet the diverse needs of drone enthusiasts and
-          professionals alike, setting new standards in convenience, durability,
-          and security.
-        </p>
-        <h3>Crafted for Durability and Protection</h3>
-        <p class="p-20 fc-p fw-4 m-b-20">
-          Maxbalk is proud to announce the launch of our latest innovation: the
-          next-generation Drone Backpack. Representing a significant leap
-          forward in drone transportation technology, this backpack is
-          engineered to meet the diverse needs of drone enthusiasts and
-          professionals alike, setting new standards in convenience, durability,
-          and security.
-        </p>
-        <h3>Crafted for Durability and Protection</h3>
-        <p class="p-20 fc-p fw-4 m-b-20">
-          Maxbalk is proud to announce the launch of our latest innovation: the
-          next-generation Drone Backpack. Representing a significant leap
-          forward in drone transportation technology, this backpack is
-          engineered to meet the diverse needs of drone enthusiasts and
-          professionals alike, setting new standards in convenience, durability,
-          and security.
-        </p>
-        <h3>Crafted for Durability and Protection</h3>
-        <p class="p-20 fc-p fw-4 m-b-20">
-          Maxbalk is proud to announce the launch of our latest innovation: the
-          next-generation Drone Backpack. Representing a significant leap
-          forward in drone transportation technology, this backpack is
-          engineered to meet the diverse needs of drone enthusiasts and
-          professionals alike, setting new standards in convenience, durability,
-          and security.
-        </p>
+       
       </div>
 
       <div class="news-event__more-container">
@@ -119,25 +74,19 @@
               width="280"
               height="200"
               loading="lazy"
-              src="/images/product-banner.webp"
-              alt=""
+              src="<%= news.image %>"
+              alt="product-banner"
             />
             <a class="fc-w fw-5 p-18" href="#"
               ><h3>Maxbalk Launches Next-Generation Drone Backpack</h3></a
             >
           </div>
-          <div class="news-event__card">
-            <img
-              width="280"
-              height="200"
-              loading="lazy"
-              src="/images/product-banner.webp"
-              alt=""
-            />
-            <a class="fc-w fw-5 p-18" href="#"
-              ><h3>Maxbalk Launches Next-Generation Drone Backpack</h3></a
-            >
-          </div>
+          <% relatedNews.forEach((related) => { %>
+            <div class="news-event__card">
+                <img src="<%= related.image %>" width="280" height="200" loading="lazy" alt="Related News Image">
+                <a class="fc-w fw-5 p-18" href="/news-and-events/<%= related.slug %>"><h3><%= related.title %></h3></a>
+            </div>
+        <% }) %>
         </div>
       </div>
     </section>

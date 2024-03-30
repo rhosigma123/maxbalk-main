@@ -47,7 +47,7 @@
           autocomplete="off"
           maxlength="50"
           oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')"
-          onblur="validateName()"
+          onblur="validateName('contact-form')"
           type="text"
           placeholder="Full Name Here"
         />
@@ -62,7 +62,7 @@
           placeholder="yourmail@email.com"
           required
           autocomplete="off"
-          onblur="validateEmail()"
+          onblur="validateEmail('contact-form')"
         />
         <span id="emailError" class="error-message"></span>
 
@@ -78,7 +78,7 @@
           name="phone"
           maxlength="15"
           oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-          onblur="validatePhone()"
+          onblur="validatePhone('contact-form')"
         />
         <span id="phoneError" class="error-message"></span>
 

@@ -34,7 +34,7 @@
     </section>
     <!-- ! Banner -->
 
-    <% if (news.length > 0) { %>
+
     <!-- ! Maxbalk's News and Events -->
     <section class="p-t-75 p-b-75 our-products --white-bg">
       <div class="maxbalk-container our-products__container">
@@ -46,35 +46,35 @@
           manufacturing, healthcare, and beyond, Maxbalk is your trusted partner
           for driving success in your industry.
         </p>
-
-        <div class="maxbalk-cards-container">
-          
-          <div class="maxbalk-card --dark-bg">
-            <img
-              width="350"
-              height="200"
-              loading="lazy"
-              src="/images/portable-armored-cabins.webp"
-              alt=""
-            />
-            <h3 class="h4 fc-w fw-6">
-              Maxbalk Partners with Leading Aerospace Manufacturer
-            </h3>
-            <p class="fc-w p-18 fw-4">
-              New partnership with a leading aerospace manufacturer to enhance
-              flight operations through innovative technology solutions.
-            </p>
-            <span class="fc-w fw-6 p-18"
-              ><strong>Event - </strong>02-02-2024</span
-            >
-            <a href="" class="btn__white-br">Read More</a>
+        <% if (news.length > 0) { %>
+          <div class="maxbalk-cards-container">
+            <% news.forEach(newsItem => { %>
+              <div class="maxbalk-card --dark-bg">
+                <img
+                  width="350"
+                  height="200"
+                  loading="lazy"
+                  src="<%= newsItem.image %>"
+                  alt="<%= newsItem.title %>"
+                />
+                <h3 class="h4 fc-w fw-6">
+                  <%= newsItem.title %>
+                </h3>
+                <p class="fc-w p-18 fw-4">
+                  <%= newsItem.description %>
+                </p>
+                <span class="fc-w fw-6 p-18">
+                  <strong>Event - </strong><%= newsItem.date %>
+                </span>
+                <a href="/news-and-events/<%= newsItem.slug %>" class="btn__white-br">Read More</a>
+              </div>
+            <% }) %>
+          </div>
+          <div class="pagination m-t-50">
+            <ul></ul>
           </div>
         </div>
-        <div class="pagination m-t-50">
-          <ul></ul>
-        </div>
-      </div>
-    </section>
+      </section>
     <!-- ! Maxbalk's News and Events -->
     <% } %>
 

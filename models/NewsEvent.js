@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
-// Model Schema
 const newsSchema = new mongoose.Schema({
     title: { type: String, required: true, default: "None" },
     category: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category', // Reference to the User model
+        ref: 'Category',
     },
     newsOrEvent: {
         type: String,
@@ -34,8 +33,12 @@ const newsSchema = new mongoose.Schema({
         required: true,
         default: "Draft",
     },
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User', // Assuming you have a User model
+    }
 }, { timestamps: {} });
 
 const NewsEvent = mongoose.model('NewsEvent', newsSchema);
 
-module.exports = NewsEvent
+module.exports = NewsEvent;

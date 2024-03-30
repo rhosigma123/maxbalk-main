@@ -39,83 +39,26 @@
     </section>
     <!-- ! Banner Section -->
 
-    <!-- ! Testimonials -->
-    <section class="p-t-100 p-b-100 --dark-bg">
-      <div class="maxbalk-container testimonial">
-        <figure class="snip1192">
-          <blockquote>
-            Calvin: Sometimes when I'm talking with others, my words can't keep
-            up with my thoughts. I wonder why we think faster than we speak.
-            Hobbes: Probably so we can think twice.
-          </blockquote>
-          <div class="author">
-            <img
-              src="https://t4.ftcdn.net/jpg/03/78/43/25/360_F_378432516_6IlKiCLDAqSCGcfc6o8VqWhND51XqfFm.jpg"
-              alt="sq-sample1"
-            />
-            <h5>Pelican Steve <span> LittleSnippets</span></h5>
-          </div>
-        </figure>
-        <figure class="snip1192 hover">
-          <blockquote>
-            Thank you. before I begin, I'd like everyone to notice that my
-            report is in a professional, clear plastic binder...When a report
-            looks this good, you know it'll get an A. That's a tip kids. Write
-            it down.
-          </blockquote>
-          <div class="author">
-            <img
-              src="https://t4.ftcdn.net/jpg/03/78/43/25/360_F_378432516_6IlKiCLDAqSCGcfc6o8VqWhND51XqfFm.jpg"
-              alt="sq-sample24"
-            />
-            <h5>Max Conversion<span> LittleSnippets</span></h5>
-          </div>
-        </figure>
-        <figure class="snip1192">
-          <blockquote>
-            My behaviour is addictive functioning in a disease process of toxic
-            co-dependency. I need holistic healing and wellness before I'll
-            accept any responsibility for my actions.
-          </blockquote>
-          <div class="author">
-            <img
-              src="https://t4.ftcdn.net/jpg/03/78/43/25/360_F_378432516_6IlKiCLDAqSCGcfc6o8VqWhND51XqfFm.jpg"
-              alt="sq-sample29"
-            />
-            <h5>Eleanor Faint<span> LittleSnippets</span></h5>
-          </div>
-        </figure>
-        <figure class="snip1192">
-          <blockquote>
-            My behaviour is addictive functioning in a disease process of toxic
-            co-dependency. I need holistic healing and wellness before I'll
-            accept any responsibility for my actions.
-          </blockquote>
-          <div class="author">
-            <img
-              src="https://t4.ftcdn.net/jpg/03/78/43/25/360_F_378432516_6IlKiCLDAqSCGcfc6o8VqWhND51XqfFm.jpg"
-              alt="sq-sample29"
-            />
-            <h5>Eleanor Faint<span> LittleSnippets</span></h5>
-          </div>
-        </figure>
-        <figure class="snip1192">
-          <blockquote>
-            My behaviour is addictive functioning in a disease process of toxic
-            co-dependency. I need holistic healing and wellness before I'll
-            accept any responsibility for my actions.
-          </blockquote>
-          <div class="author">
-            <img
-              src="https://t4.ftcdn.net/jpg/03/78/43/25/360_F_378432516_6IlKiCLDAqSCGcfc6o8VqWhND51XqfFm.jpg"
-              alt="sq-sample29"
-            />
-            <h5>Eleanor Faint<span> LittleSnippets</span></h5>
-          </div>
-        </figure>
-      </div>
-    </section>
-    <!-- ! Testimonials -->
+<!-- ! Testimonials -->
+<% if (testimonials.length > 0) { %>
+  <section class="p-t-100 p-b-100 --dark-bg">
+    <div class="maxbalk-container testimonial">
+      <% testimonials.forEach(testimonial => { %>
+      <figure class="snip1192">
+        <blockquote>
+          <%= testimonial.comment %>
+        </blockquote>
+        <div class="author">
+          <img src="<%= testimonial.logo %>" alt="<%= testimonial.companyName %> Logo"/>
+          <h5><%= testimonial.personName %> <span><%= testimonial.companyName %></span></h5>
+        </div>
+      </figure>
+      <% }); %>
+    </div>
+  </section>
+  <% } %>
+  <!-- ! Testimonials -->
+  
 
     <!-- ! Call to action -->
     <section

@@ -22,7 +22,7 @@ const Team = require("../models/Team");
 const Faq = require("../models/Faq");
 const NewsLetter = require("../models/Newsletter");
 const NewsEvent = require("../models/NewsEvent");
-
+const Contact = require("../models/Contact");
 const Category = require("../models/Category");
 const Gallery = require("../models/Gallery");
 
@@ -131,14 +131,17 @@ router.get("/services/:slug", async (req, res) => {
 
 router.get("/news-and-events", async (req, res) => {
   try {
-    const news = await NewsEvent.find({ action: "Publish" })
-
+    const news = await NewsEvent.find()
+console.log(news)
     res.render("news-and-events", { news });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
+
+
+
 
 router.get("/news-and-events/:slug", async (req, res) => {
   const slug = req.params.slug;
@@ -165,7 +168,7 @@ router.get("/news-and-events/:slug", async (req, res) => {
     res.render("news-and-events-detail", { news, relatedNews });
   } catch (error) {
     console.error(error);
-    res.status(500).send("Internal Server Error");
+    res.status(500).send("Internal Server Error Main");
   }
 });
 
@@ -175,6 +178,10 @@ router.get("/industry", async (req, res) => {
 
 router.get("/contact", async (req, res) => {
   res.render("contact");
+});
+
+router.get("/thank-you", async (req, res) => {
+  res.render("thank-you");
 });
 
 router.get("/clients", async (req, res) => {
@@ -189,7 +196,13 @@ router.get("/clients", async (req, res) => {
 });
 
 router.get("/testimonial", async (req, res) => {
-  res.render("testimonial");
+  try {
+    const testimonials = await Testimonial.find(); 
+    res.render("testimonial", { testimonials }); 
+  } catch (error) {
+    console.error("Error fetching testimonials:", error);
+    res.status(500).send("Error fetching testimonials");
+  }
 });
 
 router.get("/faqs", async (req, res) => {
@@ -280,32 +293,56 @@ router.post("/contact-us", async (req, res) => {
   try {
     if (!req.body.token) {
       console.log("Token is undefined");
-      res.status(400).send("Captcha is undefined!");
+      return res.status(400).send("Captcha is undefined!");
     }
+    
     secretKey = process.env.RECAPTCHA_KEY;
     const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.token}`;
 
-    request(verifyUrl, (err, response, body) => {
+    request(verifyUrl, async (err, response, body) => {
       if (err) {
         console.log(err);
+        return res
+          .status(400)
+          .send(
+            "Your Captcha Verification failed. Please, call us on +91 79776 46886"
+          );
       }
 
       body = JSON.parse(body);
-      if (!body.success && body.success === undefined) {
-        res
+      if (!body.success || body.success === undefined || body.success == false) {
+        return res
           .status(400)
           .send(
-            "Your Captcha Verification is failed. Please, call us on +91 79776 46886"
+            "Your Captcha Verification failed. Please, call us on +91 79776 46886"
           );
-      } else if (body.score < 0.7) {
-        res
+      } else if (body.score < 0.8) {
+
+        return res
           .status(400)
           .send(
             "It seems like you are a bot and if we are mistaken. Please, call us on +91 79776 46886"
           );
       }
 
-      const { name, email, phone, message } = req.body;
+      const { name, email, phone, message, requirements } = req.body;
+      try {
+        await new Contact({
+          name: name,
+          email: email,
+          phone: phone,
+          requirements: requirements,
+          message: message
+        }).save();
+      } catch (error) {
+        console.error(error);
+        return res
+          .status(400)
+          .send(
+            "It seems like there was some issue submitting the form. Please, call us on +91 79776 46886"
+          );
+      }
+
       const transporter = nodemailer.createTransport({
         service: "SMTP",
         host: "smtp.hostinger.com",
@@ -327,14 +364,14 @@ router.post("/contact-us", async (req, res) => {
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.error(error);
-          res
+          return res
             .status(400)
             .send(
               "Due to some reason the form wasn't submitted. Please, call us on +91 79776 46886"
             );
         } else {
           console.log("Email sent successfully");
-          res
+          return res
             .status(200)
             .send(
               "We have received your message and will get back to you as soon as possible."
@@ -344,9 +381,10 @@ router.post("/contact-us", async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(400).send("Message Sent Failed. Please, Try Again!");
+    return res.status(400).send("Message Sent Failed. Please, Try Again!");
   }
 });
+
 
 // Career Form start
 router.post("/career-form", imageUpload, async (req, res) => {

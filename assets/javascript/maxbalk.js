@@ -88,13 +88,13 @@ function createPagination(totalPages, page) {
 }
 // ! pagination
 
-// ! Form validation
-function validateName() {
-  console.log("Aladdin");
-  var nameInput = document.getElementById("name");
-  var nameError = document.getElementById("nameError");
-  var name = nameInput.value;
 
+
+// ! Form validation
+function validateName(formId) {
+  var nameInput = document.querySelector(`#${formId} #name`);
+  var nameError = document.querySelector(`#${formId} #nameError`);
+  var name = nameInput.value;
   nameInput.classList.remove("error-border");
   nameError.innerHTML = "";
 
@@ -106,10 +106,9 @@ function validateName() {
   return true;
 }
 
-function validateEmail() {
-  console.log("Aladdin");
-  var emailInput = document.getElementById("email");
-  var emailError = document.getElementById("emailError");
+function validateEmail(formId) {
+  var emailInput = document.querySelector(`#${formId} #email`);
+  var emailError = document.querySelector(`#${formId} #emailError`);
   var email = emailInput.value;
 
   emailInput.classList.remove("error-border");
@@ -124,25 +123,25 @@ function validateEmail() {
   return true;
 }
 
-function validatePhone() {
-  var phoneInput = document.getElementById("phone");
-  var phoneError = document.getElementById("phoneError");
+function validatePhone(formId) {
+  var phoneInput = document.querySelector(`#${formId} #phone`);
+  var phoneError = document.querySelector(`#${formId} #phoneError`);
   var phone = phoneInput.value;
 
   phoneInput.classList.remove("error-border");
   phoneError.innerHTML = "";
 
-  if (phone.length < 7 || phone.length > 15) {
+  if (phone.length < 10 || phone.length > 12) {
     phoneInput.classList.add("error-border");
-    phoneError.innerHTML = "Please enter a valid phone number (7 to 15 digits)";
+    phoneError.innerHTML = "Enter valid number (10 to 12 digits)";
     return false;
   }
   return true;
 }
 
-function validateFile() {
-  var fileInput = document.getElementById("resume");
-  var fileError = document.getElementById("fileError");
+function validateFile(formId) {
+  var fileInput = document.querySelector(`#${formId} #resume`);
+  var fileError = document.querySelector(`#${formId} #fileError`);
   var file = fileInput.files[0];
 
   fileError.innerHTML = "";
@@ -179,9 +178,13 @@ function handleFormSubmit(event, formId) {
   const formAction = form.getAttribute("action");
   if (formId == "career-form") {
     result =
-      validateEmail() && validatePhone() && validateName() && validateFile();
+      validateEmail(formId) &&
+      validatePhone(formId) &&
+      validateName(formId) &&
+      validateFile(formId);
   } else {
-    result = validateEmail() && validatePhone() && validateName();
+    result =
+      validateEmail(formId) && validatePhone(formId) && validateName(formId);
   }
   if (result) {
     grecaptcha.ready(function () {
@@ -200,21 +203,20 @@ function handleFormSubmit(event, formId) {
           );
 
           xhr.onreadystatechange = function () {
-            const mess = document.querySelector(`#${formId} .form-message`);
-            mess.textContent = xhr.responseText;
-            if (xhr.readyState === 4 && xhr.status === 200) {
-              mess.style.display = "block";
-              mess.style.color = "#75c004";
-
-              form.reset();
-              submitBtn.disabled = false;
-            } else if (xhr.readyState === 4) {
-              mess.style.display = "block";
-              mess.style.color = "red";
-
-              submitBtn.disabled = false;
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    // Form submitted successfully, redirect to thank you page
+                    submitBtn.disabled = false;
+                    window.location.href = "/thank-you"; // Redirect to the thank you page
+                } else {
+                    const mess = document.querySelector(`#${formId} .form-message`);
+                    mess.textContent = xhr.responseText;
+                    mess.style.display = "block";
+                    mess.style.color = "red";
+                    submitBtn.disabled = false;
+                }
             }
-          };
+        };
           xhr.send(new URLSearchParams(formData));
         });
     });
